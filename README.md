@@ -2,7 +2,7 @@
 Repositorio para la clase de Topicos de la IA
 
 # Instituto tecnologico de culiacan
-# Ciencia de datos 10:00 - 11:00 AM
+# Topicos de la IA 10:00 - 11:00 AM
 # Maestro: ZURIEL DATHAN MORA FELIX
  # Alumnos: 
  # GUTIERREZ CHAVEZ DENZEL ARTURO
