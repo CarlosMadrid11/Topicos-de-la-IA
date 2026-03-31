@@ -1,0 +1,3361 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_dc2b0d450b663b7fc307d0dfa02e97e2 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_dc2b0d450b663b7fc307d0dfa02e97e2" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_dc2b0d450b663b7fc307d0dfa02e97e2 = L.map(
+                "map_dc2b0d450b663b7fc307d0dfa02e97e2",
+                {
+                    center: [24.79620883, -107.40260635000003],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_aa029741b54b46b14e9262ef1665903e = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_aa029741b54b46b14e9262ef1665903e.addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var marker_7f8ae66a34afe718df77e226b3dbd41f = L.marker(
+                [24.774908, -107.309857],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_fb8cf76a9db0c0cee92c7eaff398574b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_7f8ae66a34afe718df77e226b3dbd41f.bindTooltip(
+                `<div>
+                     CD 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7f8ae66a34afe718df77e226b3dbd41f.setIcon(icon_fb8cf76a9db0c0cee92c7eaff398574b);
+            
+    
+            var marker_9121f2b3b0bb6a9b667c35c37dfeb40c = L.marker(
+                [24.846399, -107.380268],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_261947ca547d20d41c473d19fa3620e3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_9121f2b3b0bb6a9b667c35c37dfeb40c.bindTooltip(
+                `<div>
+                     CD 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9121f2b3b0bb6a9b667c35c37dfeb40c.setIcon(icon_261947ca547d20d41c473d19fa3620e3);
+            
+    
+            var marker_72a3b375b55f7c1f0759f559608f0cf1 = L.marker(
+                [24.731204, -107.468801],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_b45f9a95586a68df79b877e6122628d8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_72a3b375b55f7c1f0759f559608f0cf1.bindTooltip(
+                `<div>
+                     CD 2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_72a3b375b55f7c1f0759f559608f0cf1.setIcon(icon_b45f9a95586a68df79b877e6122628d8);
+            
+    
+            var marker_bd996b87027f4427921e3128babd080f = L.marker(
+                [24.711617, -107.326765],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_73d2a43f92c192c61b91ade06e3b72ed = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_bd996b87027f4427921e3128babd080f.bindTooltip(
+                `<div>
+                     CD 3
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bd996b87027f4427921e3128babd080f.setIcon(icon_73d2a43f92c192c61b91ade06e3b72ed);
+            
+    
+            var marker_5fcc2a5837828032fb326332fed3ec15 = L.marker(
+                [24.820223, -107.358385],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_bf519c7c582752a3b725246b348966c4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_5fcc2a5837828032fb326332fed3ec15.bindTooltip(
+                `<div>
+                     CD 4
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5fcc2a5837828032fb326332fed3ec15.setIcon(icon_bf519c7c582752a3b725246b348966c4);
+            
+    
+            var marker_f857fdba8ebf14ad2f2cabf4e62d59b5 = L.marker(
+                [24.704117, -107.306018],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_0877e5599d664dfe69af4d3d88a84d19 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_f857fdba8ebf14ad2f2cabf4e62d59b5.bindTooltip(
+                `<div>
+                     CD 5
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f857fdba8ebf14ad2f2cabf4e62d59b5.setIcon(icon_0877e5599d664dfe69af4d3d88a84d19);
+            
+    
+            var marker_bd2dacb3e9c41ee1019e6f34309d2b92 = L.marker(
+                [24.866489, -107.457532],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_82ae7f2407fab8ef9db0954e2892ff3a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_bd2dacb3e9c41ee1019e6f34309d2b92.bindTooltip(
+                `<div>
+                     CD 6
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bd2dacb3e9c41ee1019e6f34309d2b92.setIcon(icon_82ae7f2407fab8ef9db0954e2892ff3a);
+            
+    
+            var marker_741ad9ca40262ac868e091d756728f52 = L.marker(
+                [24.736365, -107.463319],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_5fdc4349579615626bb1f7b2dc845ca0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_741ad9ca40262ac868e091d756728f52.bindTooltip(
+                `<div>
+                     CD 7
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_741ad9ca40262ac868e091d756728f52.setIcon(icon_5fdc4349579615626bb1f7b2dc845ca0);
+            
+    
+            var marker_531e5dca53bfb0604abe1e2d9cdd93c2 = L.marker(
+                [24.760848, -107.395049],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_79ce321bc404d3e2e22bf63308274724 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_531e5dca53bfb0604abe1e2d9cdd93c2.bindTooltip(
+                `<div>
+                     CD 8
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_531e5dca53bfb0604abe1e2d9cdd93c2.setIcon(icon_79ce321bc404d3e2e22bf63308274724);
+            
+    
+            var marker_6548a2b733049a919af6e91ed945a1da = L.marker(
+                [24.786389, -107.441754],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_c45bce8a33e56b06e1fd5e2461ea7552 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_6548a2b733049a919af6e91ed945a1da.bindTooltip(
+                `<div>
+                     CD 9
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6548a2b733049a919af6e91ed945a1da.setIcon(icon_c45bce8a33e56b06e1fd5e2461ea7552);
+            
+    
+            var marker_48e89e24cc5dcf683027bab7bf8e43d1 = L.marker(
+                [24.822371, -107.472101],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_88c355e3fc76afbb0489a60b82f1739b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_48e89e24cc5dcf683027bab7bf8e43d1.bindTooltip(
+                `<div>
+                     Tienda 10
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_48e89e24cc5dcf683027bab7bf8e43d1.setIcon(icon_88c355e3fc76afbb0489a60b82f1739b);
+            
+    
+            var marker_2fdee96daa1663cd1a0f84dccbde7a5c = L.marker(
+                [24.758429, -107.426728],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_bf5d4775a0f8d1851186eac536064e48 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_2fdee96daa1663cd1a0f84dccbde7a5c.bindTooltip(
+                `<div>
+                     Tienda 11
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2fdee96daa1663cd1a0f84dccbde7a5c.setIcon(icon_bf5d4775a0f8d1851186eac536064e48);
+            
+    
+            var marker_c8851980ed596f8c485f54950176dee6 = L.marker(
+                [24.791214, -107.342965],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_94d410579574b6288bda275fa28096e6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_c8851980ed596f8c485f54950176dee6.bindTooltip(
+                `<div>
+                     Tienda 12
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c8851980ed596f8c485f54950176dee6.setIcon(icon_94d410579574b6288bda275fa28096e6);
+            
+    
+            var marker_6a3811b9a0597a6ec5d7afc324e170e9 = L.marker(
+                [24.739935, -107.397153],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_ae177520ce16c43a48cbe41b66e96264 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_6a3811b9a0597a6ec5d7afc324e170e9.bindTooltip(
+                `<div>
+                     Tienda 13
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6a3811b9a0597a6ec5d7afc324e170e9.setIcon(icon_ae177520ce16c43a48cbe41b66e96264);
+            
+    
+            var marker_678afff656191d06c65a632f46369f1c = L.marker(
+                [24.818483, -107.49071],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_41e449ac9dd9658dca70d339d7949cc5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_678afff656191d06c65a632f46369f1c.bindTooltip(
+                `<div>
+                     Tienda 14
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_678afff656191d06c65a632f46369f1c.setIcon(icon_41e449ac9dd9658dca70d339d7949cc5);
+            
+    
+            var marker_3c62b1d8fbe626064ad9e855dc59bd4c = L.marker(
+                [24.821509, -107.465895],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_27ac399c115939f19408643c93b9812a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_3c62b1d8fbe626064ad9e855dc59bd4c.bindTooltip(
+                `<div>
+                     Tienda 15
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3c62b1d8fbe626064ad9e855dc59bd4c.setIcon(icon_27ac399c115939f19408643c93b9812a);
+            
+    
+            var marker_20dfcdc5c738608e7431d08aaa425b2a = L.marker(
+                [24.71301, -107.310223],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_faa38e197980d256bd9a3f3a3f8adf94 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_20dfcdc5c738608e7431d08aaa425b2a.bindTooltip(
+                `<div>
+                     Tienda 16
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_20dfcdc5c738608e7431d08aaa425b2a.setIcon(icon_faa38e197980d256bd9a3f3a3f8adf94);
+            
+    
+            var marker_19a7b6db925028c89a62b9320d812049 = L.marker(
+                [24.893126, -107.338321],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_c83b7549c05b1fb0992f79f9185d78c1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_19a7b6db925028c89a62b9320d812049.bindTooltip(
+                `<div>
+                     Tienda 17
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_19a7b6db925028c89a62b9320d812049.setIcon(icon_c83b7549c05b1fb0992f79f9185d78c1);
+            
+    
+            var marker_73f66d894d62acf0a954971d98897532 = L.marker(
+                [24.760923, -107.480466],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_350215ffc4dbf4662928e9e370cc7c0d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_73f66d894d62acf0a954971d98897532.bindTooltip(
+                `<div>
+                     Tienda 18
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_73f66d894d62acf0a954971d98897532.setIcon(icon_350215ffc4dbf4662928e9e370cc7c0d);
+            
+    
+            var marker_1a7f1f1527195c420384947bc70be1d2 = L.marker(
+                [24.836847, -107.41197],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_0cf0d3668cc10e637a0ce317260bc51c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_1a7f1f1527195c420384947bc70be1d2.bindTooltip(
+                `<div>
+                     Tienda 19
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1a7f1f1527195c420384947bc70be1d2.setIcon(icon_0cf0d3668cc10e637a0ce317260bc51c);
+            
+    
+            var marker_63646ce7806206420b2fe36382c79732 = L.marker(
+                [24.724408, -107.400965],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_425e036085508b010f21988d3acf0b27 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_63646ce7806206420b2fe36382c79732.bindTooltip(
+                `<div>
+                     Tienda 20
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_63646ce7806206420b2fe36382c79732.setIcon(icon_425e036085508b010f21988d3acf0b27);
+            
+    
+            var marker_7aa709d1b1426f8b7fec094298f455f3 = L.marker(
+                [24.706878, -107.318136],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_9f1596ba14328ba61ab0f9c1f397ac36 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_7aa709d1b1426f8b7fec094298f455f3.bindTooltip(
+                `<div>
+                     Tienda 21
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7aa709d1b1426f8b7fec094298f455f3.setIcon(icon_9f1596ba14328ba61ab0f9c1f397ac36);
+            
+    
+            var marker_69dd1c110582b7cd993f763c3ad54eb3 = L.marker(
+                [24.751756, -107.367496],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_84645d1f708823f69a9d635d86b3d456 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_69dd1c110582b7cd993f763c3ad54eb3.bindTooltip(
+                `<div>
+                     Tienda 22
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_69dd1c110582b7cd993f763c3ad54eb3.setIcon(icon_84645d1f708823f69a9d635d86b3d456);
+            
+    
+            var marker_0655c80d5aa51c6593a9648a4396cd7a = L.marker(
+                [24.762342, -107.395986],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_e9260a95fb480921ceae11b415e6bdad = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_0655c80d5aa51c6593a9648a4396cd7a.bindTooltip(
+                `<div>
+                     Tienda 23
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0655c80d5aa51c6593a9648a4396cd7a.setIcon(icon_e9260a95fb480921ceae11b415e6bdad);
+            
+    
+            var marker_2d0649b3a0a8e138604f51abaae49c02 = L.marker(
+                [24.809342, -107.463029],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_25e4076ac344c3a43cfec7f6353314af = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_2d0649b3a0a8e138604f51abaae49c02.bindTooltip(
+                `<div>
+                     Tienda 24
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2d0649b3a0a8e138604f51abaae49c02.setIcon(icon_25e4076ac344c3a43cfec7f6353314af);
+            
+    
+            var marker_5bd60a33c15d8419b684a9564d611b3b = L.marker(
+                [24.893917, -107.344973],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_dfe29291dfa48f1ac74e6a8a34089110 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_5bd60a33c15d8419b684a9564d611b3b.bindTooltip(
+                `<div>
+                     Tienda 25
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5bd60a33c15d8419b684a9564d611b3b.setIcon(icon_dfe29291dfa48f1ac74e6a8a34089110);
+            
+    
+            var marker_4610f090fae6dbdc2961fb804c5485f2 = L.marker(
+                [24.8879, -107.321035],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_244852c8a7070ef50190d55dbe28d7f3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_4610f090fae6dbdc2961fb804c5485f2.bindTooltip(
+                `<div>
+                     Tienda 26
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4610f090fae6dbdc2961fb804c5485f2.setIcon(icon_244852c8a7070ef50190d55dbe28d7f3);
+            
+    
+            var marker_436176eae9a04e0f69bd3434c40339ea = L.marker(
+                [24.81958, -107.315625],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_eee100f386074e012531c98d56e787cc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_436176eae9a04e0f69bd3434c40339ea.bindTooltip(
+                `<div>
+                     Tienda 27
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_436176eae9a04e0f69bd3434c40339ea.setIcon(icon_eee100f386074e012531c98d56e787cc);
+            
+    
+            var marker_f22de5ce20bd6f70134cbf593702e2de = L.marker(
+                [24.717699, -107.460803],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_7f2eb93ed448ca6ce4ec639f18f6b03e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_f22de5ce20bd6f70134cbf593702e2de.bindTooltip(
+                `<div>
+                     Tienda 28
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f22de5ce20bd6f70134cbf593702e2de.setIcon(icon_7f2eb93ed448ca6ce4ec639f18f6b03e);
+            
+    
+            var marker_c241afa79cfc9afab45feefb592484db = L.marker(
+                [24.709045, -107.434934],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_0674d13fb679bdf67b0c6f14070de2e1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_c241afa79cfc9afab45feefb592484db.bindTooltip(
+                `<div>
+                     Tienda 29
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c241afa79cfc9afab45feefb592484db.setIcon(icon_0674d13fb679bdf67b0c6f14070de2e1);
+            
+    
+            var marker_785d24c4954bf51e9fdfc0f8a620df6c = L.marker(
+                [24.777735, -107.44573],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_170bb6d35b61dbb325ddd9353f4004ce = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_785d24c4954bf51e9fdfc0f8a620df6c.bindTooltip(
+                `<div>
+                     Tienda 30
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_785d24c4954bf51e9fdfc0f8a620df6c.setIcon(icon_170bb6d35b61dbb325ddd9353f4004ce);
+            
+    
+            var marker_8697fa9611ae5d263f2def7394c024f2 = L.marker(
+                [24.865748, -107.428649],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_ae89b986bea84cf6d0d5e721c304f71b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_8697fa9611ae5d263f2def7394c024f2.bindTooltip(
+                `<div>
+                     Tienda 31
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8697fa9611ae5d263f2def7394c024f2.setIcon(icon_ae89b986bea84cf6d0d5e721c304f71b);
+            
+    
+            var marker_b9f8595c8b820770aa81daeb3e5e6559 = L.marker(
+                [24.756187, -107.391461],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_1ceb5485c2b8df0575359fb189f477a2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_b9f8595c8b820770aa81daeb3e5e6559.bindTooltip(
+                `<div>
+                     Tienda 32
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b9f8595c8b820770aa81daeb3e5e6559.setIcon(icon_1ceb5485c2b8df0575359fb189f477a2);
+            
+    
+            var marker_1c3cd0bdc47fc158bdf73eb519ca087f = L.marker(
+                [24.728185, -107.339561],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_c5ea97a4ec54ecac760daed123b32ed7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_1c3cd0bdc47fc158bdf73eb519ca087f.bindTooltip(
+                `<div>
+                     Tienda 33
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1c3cd0bdc47fc158bdf73eb519ca087f.setIcon(icon_c5ea97a4ec54ecac760daed123b32ed7);
+            
+    
+            var marker_d6b550b85339d2ee8b9d04e2e831c304 = L.marker(
+                [24.71491, -107.302623],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_e369669ea079d1c90fec7054922db1f9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_d6b550b85339d2ee8b9d04e2e831c304.bindTooltip(
+                `<div>
+                     Tienda 34
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d6b550b85339d2ee8b9d04e2e831c304.setIcon(icon_e369669ea079d1c90fec7054922db1f9);
+            
+    
+            var marker_83aa8aebf6a51800ff887156f3cc2620 = L.marker(
+                [24.854449, -107.460257],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_d7f44091f72b2f0363e34dfc529f4486 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_83aa8aebf6a51800ff887156f3cc2620.bindTooltip(
+                `<div>
+                     Tienda 35
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_83aa8aebf6a51800ff887156f3cc2620.setIcon(icon_d7f44091f72b2f0363e34dfc529f4486);
+            
+    
+            var marker_9c9623ee9b1b7f567f3f193e8e60ed78 = L.marker(
+                [24.701104, -107.336908],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_ed5cba1f30c2a0766f416c6a5d56dea8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_9c9623ee9b1b7f567f3f193e8e60ed78.bindTooltip(
+                `<div>
+                     Tienda 36
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9c9623ee9b1b7f567f3f193e8e60ed78.setIcon(icon_ed5cba1f30c2a0766f416c6a5d56dea8);
+            
+    
+            var marker_cf674e16deb23e31b068f576dda9b4c3 = L.marker(
+                [24.841371, -107.354199],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_1dc9ce06c60ab6541c21c3b119c6287a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_cf674e16deb23e31b068f576dda9b4c3.bindTooltip(
+                `<div>
+                     Tienda 37
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_cf674e16deb23e31b068f576dda9b4c3.setIcon(icon_1dc9ce06c60ab6541c21c3b119c6287a);
+            
+    
+            var marker_28dd4f4394cfd899c050977a795ce889 = L.marker(
+                [24.854254, -107.485191],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_ef005024faf611777dacef29ef4b5c72 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_28dd4f4394cfd899c050977a795ce889.bindTooltip(
+                `<div>
+                     Tienda 38
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_28dd4f4394cfd899c050977a795ce889.setIcon(icon_ef005024faf611777dacef29ef4b5c72);
+            
+    
+            var marker_629eb45c1d17d67b6c3d17f105a3bb45 = L.marker(
+                [24.771693, -107.476826],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_d657392f387ae2a85c734f85d966a014 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_629eb45c1d17d67b6c3d17f105a3bb45.bindTooltip(
+                `<div>
+                     Tienda 39
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_629eb45c1d17d67b6c3d17f105a3bb45.setIcon(icon_d657392f387ae2a85c734f85d966a014);
+            
+    
+            var marker_778a62853582153db0232db9877ae273 = L.marker(
+                [24.872621, -107.37534],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_f2dc373e1425203e25a1a13db98dfda8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_778a62853582153db0232db9877ae273.bindTooltip(
+                `<div>
+                     Tienda 40
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_778a62853582153db0232db9877ae273.setIcon(icon_f2dc373e1425203e25a1a13db98dfda8);
+            
+    
+            var marker_db6070e3a195b263fd6a5785544b47a1 = L.marker(
+                [24.76618, -107.487288],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_0672556a27e0f794e093144fa1c37170 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_db6070e3a195b263fd6a5785544b47a1.bindTooltip(
+                `<div>
+                     Tienda 41
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_db6070e3a195b263fd6a5785544b47a1.setIcon(icon_0672556a27e0f794e093144fa1c37170);
+            
+    
+            var marker_a373d5fc217be7b37b3e2d29dab7ef39 = L.marker(
+                [24.762196, -107.434963],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_a72de2ff9fcf3b7a60ba14cc78814571 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_a373d5fc217be7b37b3e2d29dab7ef39.bindTooltip(
+                `<div>
+                     Tienda 42
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a373d5fc217be7b37b3e2d29dab7ef39.setIcon(icon_a72de2ff9fcf3b7a60ba14cc78814571);
+            
+    
+            var marker_1ba4c0a5760138dd81e38435728c71d8 = L.marker(
+                [24.845921, -107.372489],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_4941489177f62676abf22bf8d4bda64d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_1ba4c0a5760138dd81e38435728c71d8.bindTooltip(
+                `<div>
+                     Tienda 43
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1ba4c0a5760138dd81e38435728c71d8.setIcon(icon_4941489177f62676abf22bf8d4bda64d);
+            
+    
+            var marker_ab654da26fde08aaed3f1b884b849c8e = L.marker(
+                [24.877443, -107.405557],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_c83b69abaddc622cc7997a3a0e62a40c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_ab654da26fde08aaed3f1b884b849c8e.bindTooltip(
+                `<div>
+                     Tienda 44
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ab654da26fde08aaed3f1b884b849c8e.setIcon(icon_c83b69abaddc622cc7997a3a0e62a40c);
+            
+    
+            var marker_28f4c414b8b8bc57822397a92f343955 = L.marker(
+                [24.723919, -107.357351],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_070c320fe094b1da2efc844867166171 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_28f4c414b8b8bc57822397a92f343955.bindTooltip(
+                `<div>
+                     Tienda 45
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_28f4c414b8b8bc57822397a92f343955.setIcon(icon_070c320fe094b1da2efc844867166171);
+            
+    
+            var marker_8650767962425fd6c0123ceaa7295821 = L.marker(
+                [24.852157, -107.387745],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_e32f511fc440403a78b32b2a3ee86930 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_8650767962425fd6c0123ceaa7295821.bindTooltip(
+                `<div>
+                     Tienda 46
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8650767962425fd6c0123ceaa7295821.setIcon(icon_e32f511fc440403a78b32b2a3ee86930);
+            
+    
+            var marker_1960db5ff83182060164eadd2e4bdd2b = L.marker(
+                [24.854193, -107.401241],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_a0f5fdf2ba4324b30d5e9af906f15df6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_1960db5ff83182060164eadd2e4bdd2b.bindTooltip(
+                `<div>
+                     Tienda 47
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1960db5ff83182060164eadd2e4bdd2b.setIcon(icon_a0f5fdf2ba4324b30d5e9af906f15df6);
+            
+    
+            var marker_5198f356c514f4c2fb33b45e286fc0ea = L.marker(
+                [24.804547, -107.414492],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_66b84e0043459843c806f415e3f6a6f9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_5198f356c514f4c2fb33b45e286fc0ea.bindTooltip(
+                `<div>
+                     Tienda 48
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5198f356c514f4c2fb33b45e286fc0ea.setIcon(icon_66b84e0043459843c806f415e3f6a6f9);
+            
+    
+            var marker_5e8523c7625de5bb9b3fb1e28eaf2497 = L.marker(
+                [24.705084, -107.478422],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_b8414a9b7da46c2b3e3ae78855d295de = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_5e8523c7625de5bb9b3fb1e28eaf2497.bindTooltip(
+                `<div>
+                     Tienda 49
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5e8523c7625de5bb9b3fb1e28eaf2497.setIcon(icon_b8414a9b7da46c2b3e3ae78855d295de);
+            
+    
+            var marker_88cb343e3d0b3f07e4c2c6be84f69e7d = L.marker(
+                [24.706286, -107.372718],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_0fcc9274d943d6522da2b9cc507b2162 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_88cb343e3d0b3f07e4c2c6be84f69e7d.bindTooltip(
+                `<div>
+                     Tienda 50
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_88cb343e3d0b3f07e4c2c6be84f69e7d.setIcon(icon_0fcc9274d943d6522da2b9cc507b2162);
+            
+    
+            var marker_0fcab00b6698f56389eaad3f56053a4a = L.marker(
+                [24.762871, -107.398286],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_e5547aae1fa7f8bf63663113e0fd5bef = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_0fcab00b6698f56389eaad3f56053a4a.bindTooltip(
+                `<div>
+                     Tienda 51
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0fcab00b6698f56389eaad3f56053a4a.setIcon(icon_e5547aae1fa7f8bf63663113e0fd5bef);
+            
+    
+            var marker_20de237c40e6199b72f9f794c9e05804 = L.marker(
+                [24.881513, -107.450142],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_eab4d6e271f98131e4390d5db9e1c928 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_20de237c40e6199b72f9f794c9e05804.bindTooltip(
+                `<div>
+                     Tienda 52
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_20de237c40e6199b72f9f794c9e05804.setIcon(icon_eab4d6e271f98131e4390d5db9e1c928);
+            
+    
+            var marker_1579114e62c95305a25e92af5ab8206e = L.marker(
+                [24.782077, -107.34889],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_f9d6282231a0f1d110331464c5715bbf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_1579114e62c95305a25e92af5ab8206e.bindTooltip(
+                `<div>
+                     Tienda 53
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1579114e62c95305a25e92af5ab8206e.setIcon(icon_f9d6282231a0f1d110331464c5715bbf);
+            
+    
+            var marker_0d1f63bb4c44cafbfe0f5ed99c4ee840 = L.marker(
+                [24.74576, -107.484604],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_f822a58f682fd52eb6fdf6412b5afecd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_0d1f63bb4c44cafbfe0f5ed99c4ee840.bindTooltip(
+                `<div>
+                     Tienda 54
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0d1f63bb4c44cafbfe0f5ed99c4ee840.setIcon(icon_f822a58f682fd52eb6fdf6412b5afecd);
+            
+    
+            var marker_38cc4950bc789e3eda51691c64940897 = L.marker(
+                [24.75795, -107.467756],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_f2f7074210b9da6f62983e8bc8e03506 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_38cc4950bc789e3eda51691c64940897.bindTooltip(
+                `<div>
+                     Tienda 55
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_38cc4950bc789e3eda51691c64940897.setIcon(icon_f2f7074210b9da6f62983e8bc8e03506);
+            
+    
+            var marker_2a5b557fb9f5f86ca3fcdc451cd53dd1 = L.marker(
+                [24.88594, -107.338376],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_093242ac9db3b4d00c68f924f40441fa = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_2a5b557fb9f5f86ca3fcdc451cd53dd1.bindTooltip(
+                `<div>
+                     Tienda 56
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2a5b557fb9f5f86ca3fcdc451cd53dd1.setIcon(icon_093242ac9db3b4d00c68f924f40441fa);
+            
+    
+            var marker_0c8d65360c460938cc76fb4774cf8794 = L.marker(
+                [24.826681, -107.325708],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_e5a660c7a39b74a7be91d5145a94b8e8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_0c8d65360c460938cc76fb4774cf8794.bindTooltip(
+                `<div>
+                     Tienda 57
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0c8d65360c460938cc76fb4774cf8794.setIcon(icon_e5a660c7a39b74a7be91d5145a94b8e8);
+            
+    
+            var marker_05adb431f90ed7456a1603c1dd29d9b8 = L.marker(
+                [24.860734, -107.462686],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_c59afa399dd6bc609ae5f9bf31a7ad64 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_05adb431f90ed7456a1603c1dd29d9b8.bindTooltip(
+                `<div>
+                     Tienda 58
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_05adb431f90ed7456a1603c1dd29d9b8.setIcon(icon_c59afa399dd6bc609ae5f9bf31a7ad64);
+            
+    
+            var marker_a5334b42b3635a38e7a937c1f562fbe6 = L.marker(
+                [24.878512, -107.392132],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_df12a2eab318d4936e04f249286abda0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_a5334b42b3635a38e7a937c1f562fbe6.bindTooltip(
+                `<div>
+                     Tienda 59
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a5334b42b3635a38e7a937c1f562fbe6.setIcon(icon_df12a2eab318d4936e04f249286abda0);
+            
+    
+            var marker_a5154b7194755e495ce29153346845fe = L.marker(
+                [24.861488, -107.320782],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_974f290431c41be5996b333b33d1d413 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_a5154b7194755e495ce29153346845fe.bindTooltip(
+                `<div>
+                     Tienda 60
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a5154b7194755e495ce29153346845fe.setIcon(icon_974f290431c41be5996b333b33d1d413);
+            
+    
+            var marker_b05b58e6ca373358fb02b6a0c0732ed6 = L.marker(
+                [24.763601, -107.47799],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_c93f9f5d65c1dfea26c32bb81b21a16a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_b05b58e6ca373358fb02b6a0c0732ed6.bindTooltip(
+                `<div>
+                     Tienda 61
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b05b58e6ca373358fb02b6a0c0732ed6.setIcon(icon_c93f9f5d65c1dfea26c32bb81b21a16a);
+            
+    
+            var marker_f4b57fd6795948a50ae939655885a4aa = L.marker(
+                [24.745587, -107.414578],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_3c472057468aa176b69e3d761b617184 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_f4b57fd6795948a50ae939655885a4aa.bindTooltip(
+                `<div>
+                     Tienda 62
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f4b57fd6795948a50ae939655885a4aa.setIcon(icon_3c472057468aa176b69e3d761b617184);
+            
+    
+            var marker_db00a310e85cbb5caf6403aaad7d175d = L.marker(
+                [24.863603, -107.327854],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_a0b4a195380ffe2c1bb725a8c30cfded = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_db00a310e85cbb5caf6403aaad7d175d.bindTooltip(
+                `<div>
+                     Tienda 63
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_db00a310e85cbb5caf6403aaad7d175d.setIcon(icon_a0b4a195380ffe2c1bb725a8c30cfded);
+            
+    
+            var marker_0f4af79a6bbbfd5a5ef483979afff04f = L.marker(
+                [24.70139, -107.397851],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_c58606612c06b98128ce3c3815d3948f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_0f4af79a6bbbfd5a5ef483979afff04f.bindTooltip(
+                `<div>
+                     Tienda 64
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0f4af79a6bbbfd5a5ef483979afff04f.setIcon(icon_c58606612c06b98128ce3c3815d3948f);
+            
+    
+            var marker_cb470795ed9253b588e5c9ec3262ecac = L.marker(
+                [24.783482, -107.455578],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_b4b01932337f003e0a516b12e309c4a2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_cb470795ed9253b588e5c9ec3262ecac.bindTooltip(
+                `<div>
+                     Tienda 65
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_cb470795ed9253b588e5c9ec3262ecac.setIcon(icon_b4b01932337f003e0a516b12e309c4a2);
+            
+    
+            var marker_3c8f1cbe493dafbb8f5505852c6d1b06 = L.marker(
+                [24.723973, -107.432477],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_deb858e6aba0f9881f6a7f2d0a5c6c38 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_3c8f1cbe493dafbb8f5505852c6d1b06.bindTooltip(
+                `<div>
+                     Tienda 66
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3c8f1cbe493dafbb8f5505852c6d1b06.setIcon(icon_deb858e6aba0f9881f6a7f2d0a5c6c38);
+            
+    
+            var marker_a912758d3f2cef206a9c1b93121cde74 = L.marker(
+                [24.888582, -107.435359],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_b040c7240793d4a034dfd812ff600000 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_a912758d3f2cef206a9c1b93121cde74.bindTooltip(
+                `<div>
+                     Tienda 67
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a912758d3f2cef206a9c1b93121cde74.setIcon(icon_b040c7240793d4a034dfd812ff600000);
+            
+    
+            var marker_c6e201669d7a9df2ae801530cec65bc6 = L.marker(
+                [24.803758, -107.359396],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_62f76b7fe8b65a2d142968de97158d23 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_c6e201669d7a9df2ae801530cec65bc6.bindTooltip(
+                `<div>
+                     Tienda 68
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c6e201669d7a9df2ae801530cec65bc6.setIcon(icon_62f76b7fe8b65a2d142968de97158d23);
+            
+    
+            var marker_f81ba6c7a512d520b163c46d07a5a9f4 = L.marker(
+                [24.772726, -107.305644],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_af379c62cc43f9335e116397ad77eab8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_f81ba6c7a512d520b163c46d07a5a9f4.bindTooltip(
+                `<div>
+                     Tienda 69
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f81ba6c7a512d520b163c46d07a5a9f4.setIcon(icon_af379c62cc43f9335e116397ad77eab8);
+            
+    
+            var marker_351cf5dd8791b4a469f1888e1382fd05 = L.marker(
+                [24.892489, -107.449644],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_e3eeae81a6f19d277ea188a82d18f3fc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_351cf5dd8791b4a469f1888e1382fd05.bindTooltip(
+                `<div>
+                     Tienda 70
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_351cf5dd8791b4a469f1888e1382fd05.setIcon(icon_e3eeae81a6f19d277ea188a82d18f3fc);
+            
+    
+            var marker_47b8e3fc42e213a022ab711eba71017e = L.marker(
+                [24.79945, -107.439824],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_0eb5728f274ff2fc24769de45915a487 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_47b8e3fc42e213a022ab711eba71017e.bindTooltip(
+                `<div>
+                     Tienda 71
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_47b8e3fc42e213a022ab711eba71017e.setIcon(icon_0eb5728f274ff2fc24769de45915a487);
+            
+    
+            var marker_fb9bdadfaa2781b21f7238341044fbfa = L.marker(
+                [24.756968, -107.492623],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_e00698ea3818385175bc4f2381d10acf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_fb9bdadfaa2781b21f7238341044fbfa.bindTooltip(
+                `<div>
+                     Tienda 72
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_fb9bdadfaa2781b21f7238341044fbfa.setIcon(icon_e00698ea3818385175bc4f2381d10acf);
+            
+    
+            var marker_6c8f47ab53466618881cb7fd2ad6bb72 = L.marker(
+                [24.821913, -107.399464],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_d89c5a3e99ee63ad9c2da377afd97a5c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_6c8f47ab53466618881cb7fd2ad6bb72.bindTooltip(
+                `<div>
+                     Tienda 73
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6c8f47ab53466618881cb7fd2ad6bb72.setIcon(icon_d89c5a3e99ee63ad9c2da377afd97a5c);
+            
+    
+            var marker_1207dc14a10dad843ce697d19cdc9715 = L.marker(
+                [24.710296, -107.444271],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_bae84c5cd2404aad65671ff09b8d4f01 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_1207dc14a10dad843ce697d19cdc9715.bindTooltip(
+                `<div>
+                     Tienda 74
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1207dc14a10dad843ce697d19cdc9715.setIcon(icon_bae84c5cd2404aad65671ff09b8d4f01);
+            
+    
+            var marker_0f1b5e29215e47b4a2e7eda1c709db27 = L.marker(
+                [24.881653, -107.452088],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_1840ca836816f4aa78f1865c96a9f872 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_0f1b5e29215e47b4a2e7eda1c709db27.bindTooltip(
+                `<div>
+                     Tienda 75
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0f1b5e29215e47b4a2e7eda1c709db27.setIcon(icon_1840ca836816f4aa78f1865c96a9f872);
+            
+    
+            var marker_cb94504c6d6faa8f94890fc669367d8f = L.marker(
+                [24.728979, -107.402109],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_31feff642eadc078802e0e92a3359d5b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_cb94504c6d6faa8f94890fc669367d8f.bindTooltip(
+                `<div>
+                     Tienda 76
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_cb94504c6d6faa8f94890fc669367d8f.setIcon(icon_31feff642eadc078802e0e92a3359d5b);
+            
+    
+            var marker_6f89242639b92c2b01255b5523cf2893 = L.marker(
+                [24.89713, -107.451589],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_aa206fca70588f6ea15397702002b35e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_6f89242639b92c2b01255b5523cf2893.bindTooltip(
+                `<div>
+                     Tienda 77
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6f89242639b92c2b01255b5523cf2893.setIcon(icon_aa206fca70588f6ea15397702002b35e);
+            
+    
+            var marker_7ad7435ad5cff69db41cbb5212e6e611 = L.marker(
+                [24.834427, -107.347676],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_de26fa25b181cf0bd875e0dbe8a47fe5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_7ad7435ad5cff69db41cbb5212e6e611.bindTooltip(
+                `<div>
+                     Tienda 78
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7ad7435ad5cff69db41cbb5212e6e611.setIcon(icon_de26fa25b181cf0bd875e0dbe8a47fe5);
+            
+    
+            var marker_3f854a2ef7507455e7c43ef62afc7485 = L.marker(
+                [24.747528, -107.354357],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_e029b1182214fd98e73c81e2239eb07c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_3f854a2ef7507455e7c43ef62afc7485.bindTooltip(
+                `<div>
+                     Tienda 79
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3f854a2ef7507455e7c43ef62afc7485.setIcon(icon_e029b1182214fd98e73c81e2239eb07c);
+            
+    
+            var marker_8ad518e6d0f494fa2c101f619daa68d4 = L.marker(
+                [24.773557, -107.373539],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_d225b94fd21b140f45c72c7e3ea66884 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_8ad518e6d0f494fa2c101f619daa68d4.bindTooltip(
+                `<div>
+                     Tienda 80
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8ad518e6d0f494fa2c101f619daa68d4.setIcon(icon_d225b94fd21b140f45c72c7e3ea66884);
+            
+    
+            var marker_d90a4a7cb271a73f816ccd83df11a569 = L.marker(
+                [24.826706, -107.392845],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_ed93091e42827214e7d5132ad332c135 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_d90a4a7cb271a73f816ccd83df11a569.bindTooltip(
+                `<div>
+                     Tienda 81
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d90a4a7cb271a73f816ccd83df11a569.setIcon(icon_ed93091e42827214e7d5132ad332c135);
+            
+    
+            var marker_348355aa977b0cc3b88f91ed493785a8 = L.marker(
+                [24.718058, -107.33294],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_d562c7a149ffce8d3262257c7aad580c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_348355aa977b0cc3b88f91ed493785a8.bindTooltip(
+                `<div>
+                     Tienda 82
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_348355aa977b0cc3b88f91ed493785a8.setIcon(icon_d562c7a149ffce8d3262257c7aad580c);
+            
+    
+            var marker_639470810f9d5356a94ff63718c9ddee = L.marker(
+                [24.764156, -107.462696],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_c8a6fd8d44202ac22dfc76628d63c5a5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_639470810f9d5356a94ff63718c9ddee.bindTooltip(
+                `<div>
+                     Tienda 83
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_639470810f9d5356a94ff63718c9ddee.setIcon(icon_c8a6fd8d44202ac22dfc76628d63c5a5);
+            
+    
+            var marker_21a929497d42fc392d9376dcd1c6c7f3 = L.marker(
+                [24.708155, -107.381821],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_7023b4dd6fa6b1a0dd20be8f0032b706 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_21a929497d42fc392d9376dcd1c6c7f3.bindTooltip(
+                `<div>
+                     Tienda 84
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_21a929497d42fc392d9376dcd1c6c7f3.setIcon(icon_7023b4dd6fa6b1a0dd20be8f0032b706);
+            
+    
+            var marker_b553351b5ff50faa204d7ad280804eb4 = L.marker(
+                [24.835513, -107.496682],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_1fcc9a13e4d996514ae0fb6d435e2faf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_b553351b5ff50faa204d7ad280804eb4.bindTooltip(
+                `<div>
+                     Tienda 85
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b553351b5ff50faa204d7ad280804eb4.setIcon(icon_1fcc9a13e4d996514ae0fb6d435e2faf);
+            
+    
+            var marker_23a54c155ebbbb081986cf89c1fd7784 = L.marker(
+                [24.802419, -107.454701],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_c4ca05623f217eb2c1c6a9e090bd2b4a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_23a54c155ebbbb081986cf89c1fd7784.bindTooltip(
+                `<div>
+                     Tienda 86
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_23a54c155ebbbb081986cf89c1fd7784.setIcon(icon_c4ca05623f217eb2c1c6a9e090bd2b4a);
+            
+    
+            var marker_87ac8b80530704b28c36f9cc56c9205f = L.marker(
+                [24.829035, -107.465127],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_df138de5b79ec98653c3421ac6a26f60 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_87ac8b80530704b28c36f9cc56c9205f.bindTooltip(
+                `<div>
+                     Tienda 87
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_87ac8b80530704b28c36f9cc56c9205f.setIcon(icon_df138de5b79ec98653c3421ac6a26f60);
+            
+    
+            var marker_b8a9249681d845c98100ba44f86d2373 = L.marker(
+                [24.838188, -107.422653],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_45e3262dd01cc8ffbd3b7c3c1fbded6c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_b8a9249681d845c98100ba44f86d2373.bindTooltip(
+                `<div>
+                     Tienda 88
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b8a9249681d845c98100ba44f86d2373.setIcon(icon_45e3262dd01cc8ffbd3b7c3c1fbded6c);
+            
+    
+            var marker_cb24a24e788ffd54ea2b85a4db2703f5 = L.marker(
+                [24.887346, -107.472496],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_5f528ccadf5d389b65d3b2e5dc9884c0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_cb24a24e788ffd54ea2b85a4db2703f5.bindTooltip(
+                `<div>
+                     Tienda 89
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_cb24a24e788ffd54ea2b85a4db2703f5.setIcon(icon_5f528ccadf5d389b65d3b2e5dc9884c0);
+            
+    
+            var marker_1bb36198a890039ed8b5f6800a6943d0 = L.marker(
+                [24.768213, -107.477305],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_2d7ce28a867c708f6be9748785b4d614 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_1bb36198a890039ed8b5f6800a6943d0.bindTooltip(
+                `<div>
+                     Tienda 90
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1bb36198a890039ed8b5f6800a6943d0.setIcon(icon_2d7ce28a867c708f6be9748785b4d614);
+            
+    
+            var marker_5dd3faa1720bbb57ebcc8f595a9cca38 = L.marker(
+                [24.884939, -107.324532],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_4d0fa9e49e991ffbda17370a9e931724 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_5dd3faa1720bbb57ebcc8f595a9cca38.bindTooltip(
+                `<div>
+                     Tienda 91
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5dd3faa1720bbb57ebcc8f595a9cca38.setIcon(icon_4d0fa9e49e991ffbda17370a9e931724);
+            
+    
+            var marker_58403a2e2776e5540109ae514dae3c35 = L.marker(
+                [24.751588, -107.368003],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_1ca1677d58d5766e422c3a3aeb0136a6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_58403a2e2776e5540109ae514dae3c35.bindTooltip(
+                `<div>
+                     Tienda 92
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_58403a2e2776e5540109ae514dae3c35.setIcon(icon_1ca1677d58d5766e422c3a3aeb0136a6);
+            
+    
+            var marker_9b49499bfe14f692de79a6d45664c13d = L.marker(
+                [24.863444, -107.38896],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_ba7848d521c1d4bae86b1318b9ec524c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_9b49499bfe14f692de79a6d45664c13d.bindTooltip(
+                `<div>
+                     Tienda 93
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9b49499bfe14f692de79a6d45664c13d.setIcon(icon_ba7848d521c1d4bae86b1318b9ec524c);
+            
+    
+            var marker_f1be3a092144cabd759e5fff7949eb4f = L.marker(
+                [24.80593, -107.45163],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_719df2ba6883427022a897622b3165ec = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_f1be3a092144cabd759e5fff7949eb4f.bindTooltip(
+                `<div>
+                     Tienda 94
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f1be3a092144cabd759e5fff7949eb4f.setIcon(icon_719df2ba6883427022a897622b3165ec);
+            
+    
+            var marker_6504235ca724ebe55af89a62dc6fbbce = L.marker(
+                [24.718621, -107.320557],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_dc951595a419db0d73dc149bdbcbb39a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_6504235ca724ebe55af89a62dc6fbbce.bindTooltip(
+                `<div>
+                     Tienda 95
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6504235ca724ebe55af89a62dc6fbbce.setIcon(icon_dc951595a419db0d73dc149bdbcbb39a);
+            
+    
+            var marker_c9b27f57a4d56ef94561d53ec48caed5 = L.marker(
+                [24.880084, -107.37338],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_52a0135b6a3706a8d873419d68bc09b9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_c9b27f57a4d56ef94561d53ec48caed5.bindTooltip(
+                `<div>
+                     Tienda 96
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c9b27f57a4d56ef94561d53ec48caed5.setIcon(icon_52a0135b6a3706a8d873419d68bc09b9);
+            
+    
+            var marker_6d441555e3478d4527bd3f22313278bb = L.marker(
+                [24.767806, -107.430158],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_40bdd9d49eaf85c2f751ec98dbeee583 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_6d441555e3478d4527bd3f22313278bb.bindTooltip(
+                `<div>
+                     Tienda 97
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6d441555e3478d4527bd3f22313278bb.setIcon(icon_40bdd9d49eaf85c2f751ec98dbeee583);
+            
+    
+            var marker_9e318a5599ad18d7d3558c895fe0dc1e = L.marker(
+                [24.845191, -107.320578],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_37eb1584f868e148de13fc1a5ccfe79a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_9e318a5599ad18d7d3558c895fe0dc1e.bindTooltip(
+                `<div>
+                     Tienda 98
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9e318a5599ad18d7d3558c895fe0dc1e.setIcon(icon_37eb1584f868e148de13fc1a5ccfe79a);
+            
+    
+            var marker_77c8ac14b74ec46e1443a82a8b667163 = L.marker(
+                [24.877417, -107.344025],
+                {
+}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            var icon_1bdf04fc997d96096c8c4211b0903ae9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_77c8ac14b74ec46e1443a82a8b667163.bindTooltip(
+                `<div>
+                     Tienda 99
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_77c8ac14b74ec46e1443a82a8b667163.setIcon(icon_1bdf04fc997d96096c8c4211b0903ae9);
+            
+    
+            var poly_line_afe201bc8edddf4912b1354e4756efbb = L.polyline(
+                [[24.774908, -107.309857], [24.838188, -107.422653], [24.836847, -107.41197], [24.821913, -107.399464], [24.826706, -107.392845], [24.845921, -107.372489], [24.803758, -107.359396], [24.791214, -107.342965], [24.772726, -107.305644], [24.774908, -107.309857]],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#1f77b4", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            poly_line_afe201bc8edddf4912b1354e4756efbb.bindTooltip(
+                `<div>
+                     Ruta CD 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_9e9ff69085f29bd6d6a05d922da48e88 = L.polyline(
+                [[24.846399, -107.380268], [24.852157, -107.387745], [24.872621, -107.37534], [24.880084, -107.37338], [24.863603, -107.327854], [24.8879, -107.321035], [24.884939, -107.324532], [24.893126, -107.338321], [24.893917, -107.344973], [24.877417, -107.344025], [24.88594, -107.338376], [24.846399, -107.380268]],
+                {"bubblingMouseEvents": true, "color": "#ff7f0e", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ff7f0e", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            poly_line_9e9ff69085f29bd6d6a05d922da48e88.bindTooltip(
+                `<div>
+                     Ruta CD 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_f8b19b80e4757611faabbd0999285dd4 = L.polyline(
+                [[24.731204, -107.468801], [24.758429, -107.426728], [24.762196, -107.434963], [24.767806, -107.430158], [24.777735, -107.44573], [24.783482, -107.455578], [24.771693, -107.476826], [24.768213, -107.477305], [24.763601, -107.47799], [24.75795, -107.467756], [24.764156, -107.462696], [24.731204, -107.468801]],
+                {"bubblingMouseEvents": true, "color": "#2ca02c", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#2ca02c", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            poly_line_f8b19b80e4757611faabbd0999285dd4.bindTooltip(
+                `<div>
+                     Ruta CD 2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_b9291fcb0ca521f92a929524e578228a = L.polyline(
+                [[24.711617, -107.326765], [24.718621, -107.320557], [24.706878, -107.318136], [24.701104, -107.336908], [24.728185, -107.339561], [24.747528, -107.354357], [24.724408, -107.400965], [24.706286, -107.372718], [24.708155, -107.381821], [24.723919, -107.357351], [24.718058, -107.33294], [24.711617, -107.326765]],
+                {"bubblingMouseEvents": true, "color": "#d62728", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#d62728", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            poly_line_b9291fcb0ca521f92a929524e578228a.bindTooltip(
+                `<div>
+                     Ruta CD 3
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_6c07c79f3706091d01b65dee36e33510 = L.polyline(
+                [[24.820223, -107.358385], [24.854193, -107.401241], [24.877443, -107.405557], [24.878512, -107.392132], [24.863444, -107.38896], [24.841371, -107.354199], [24.826681, -107.325708], [24.81958, -107.315625], [24.845191, -107.320578], [24.861488, -107.320782], [24.834427, -107.347676], [24.820223, -107.358385]],
+                {"bubblingMouseEvents": true, "color": "#9467bd", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#9467bd", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            poly_line_6c07c79f3706091d01b65dee36e33510.bindTooltip(
+                `<div>
+                     Ruta CD 4
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_92c1e957ae5cb7ca141f0cec2b20ebf3 = L.polyline(
+                [[24.704117, -107.306018], [24.71301, -107.310223], [24.71491, -107.302623], [24.704117, -107.306018]],
+                {"bubblingMouseEvents": true, "color": "#8c564b", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#8c564b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            poly_line_92c1e957ae5cb7ca141f0cec2b20ebf3.bindTooltip(
+                `<div>
+                     Ruta CD 5
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_f61d49c718087e52e9780da81368a82b = L.polyline(
+                [[24.866489, -107.457532], [24.892489, -107.449644], [24.89713, -107.451589], [24.881513, -107.450142], [24.865748, -107.428649], [24.881653, -107.452088], [24.888582, -107.435359], [24.887346, -107.472496], [24.854449, -107.460257], [24.860734, -107.462686], [24.854254, -107.485191], [24.866489, -107.457532]],
+                {"bubblingMouseEvents": true, "color": "#e377c2", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#e377c2", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            poly_line_f61d49c718087e52e9780da81368a82b.bindTooltip(
+                `<div>
+                     Ruta CD 6
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_2611ecd8883bb1f57a6f39250e887d6e = L.polyline(
+                [[24.736365, -107.463319], [24.723973, -107.432477], [24.709045, -107.434934], [24.70139, -107.397851], [24.710296, -107.444271], [24.717699, -107.460803], [24.705084, -107.478422], [24.756968, -107.492623], [24.76618, -107.487288], [24.760923, -107.480466], [24.74576, -107.484604], [24.736365, -107.463319]],
+                {"bubblingMouseEvents": true, "color": "#7f7f7f", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7f7f7f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            poly_line_2611ecd8883bb1f57a6f39250e887d6e.bindTooltip(
+                `<div>
+                     Ruta CD 7
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_da4cb8c9e44dcba288d66353328bbf4c = L.polyline(
+                [[24.760848, -107.395049], [24.773557, -107.373539], [24.782077, -107.34889], [24.751588, -107.368003], [24.751756, -107.367496], [24.756187, -107.391461], [24.762342, -107.395986], [24.762871, -107.398286], [24.745587, -107.414578], [24.728979, -107.402109], [24.739935, -107.397153], [24.760848, -107.395049]],
+                {"bubblingMouseEvents": true, "color": "#bcbd22", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#bcbd22", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            poly_line_da4cb8c9e44dcba288d66353328bbf4c.bindTooltip(
+                `<div>
+                     Ruta CD 8
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_2bfdf66e35818cef07144fb863761e8c = L.polyline(
+                [[24.786389, -107.441754], [24.804547, -107.414492], [24.821509, -107.465895], [24.829035, -107.465127], [24.822371, -107.472101], [24.818483, -107.49071], [24.835513, -107.496682], [24.809342, -107.463029], [24.80593, -107.45163], [24.802419, -107.454701], [24.79945, -107.439824], [24.786389, -107.441754]],
+                {"bubblingMouseEvents": true, "color": "#17becf", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#17becf", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_dc2b0d450b663b7fc307d0dfa02e97e2);
+        
+    
+            poly_line_2bfdf66e35818cef07144fb863761e8c.bindTooltip(
+                `<div>
+                     Ruta CD 9
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>

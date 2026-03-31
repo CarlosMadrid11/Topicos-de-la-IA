@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Red de Distribución — Culiacán (Asignación Final)</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Segoe UI',sans-serif; background:#0f172a; color:#e2e8f0; display:flex; flex-direction:column; height:100vh; }
+
+#header {
+  background:linear-gradient(135deg,#1e293b,#0f172a);
+  padding:12px 20px; border-bottom:1px solid #334155;
+  display:flex; align-items:center; justify-content:space-between; flex-shrink:0;
+}
+#header h1 { font-size:1rem; font-weight:700; color:#f1f5f9; }
+#header p  { font-size:0.7rem; color:#94a3b8; margin-top:2px; }
+#stats { display:flex; gap:10px; }
+.stat { background:#0f172a; border:1px solid #334155; border-radius:6px; padding:5px 12px; text-align:center; }
+.stat .v { font-size:1rem; font-weight:700; }
+.stat .l { font-size:0.6rem; color:#64748b; text-transform:uppercase; }
+
+#main { display:flex; flex:1; overflow:hidden; }
+#map  { flex:1; }
+
+#sidebar {
+  width:260px; background:#1e293b; border-left:1px solid #334155;
+  overflow-y:auto; flex-shrink:0; padding:12px;
+}
+#sidebar h2 { font-size:0.8rem; color:#94a3b8; text-transform:uppercase; letter-spacing:.06em; margin-bottom:10px; }
+
+.cd-card {
+  border-radius:8px; border:1px solid #334155; margin-bottom:8px; overflow:hidden; cursor:pointer;
+  transition:border-color .2s;
+}
+.cd-card:hover { border-color:#64748b; }
+.cd-card.active { border-color:#7c3aed; }
+.cd-header {
+  display:flex; align-items:center; justify-content:space-between;
+  padding:8px 10px; font-size:0.78rem; font-weight:600;
+}
+.cd-badge { font-size:0.65rem; padding:2px 7px; border-radius:999px; font-weight:700; }
+.cd-stores { padding:0 10px 8px; display:none; }
+.cd-stores.open { display:block; }
+.store-chip {
+  display:inline-block; font-size:0.65rem; padding:2px 6px; border-radius:4px;
+  margin:2px; background:#0f172a; color:#94a3b8; border:1px solid #334155;
+}
+
+/* Popup */
+.leaflet-popup-content-wrapper {
+  background:#1e293b!important; border:1px solid #475569!important;
+  border-radius:10px!important; color:#e2e8f0!important;
+  box-shadow:0 8px 32px rgba(0,0,0,.5)!important;
+}
+.leaflet-popup-tip { background:#1e293b!important; }
+.leaflet-popup-content { margin:12px 16px!important; min-width:180px; }
+.popup-title { font-weight:700; font-size:.9rem; color:#f1f5f9; margin-bottom:6px; }
+.popup-row { display:flex; justify-content:space-between; font-size:.72rem; color:#94a3b8; margin-bottom:3px; }
+.popup-row span:last-child { color:#e2e8f0; font-weight:500; }
+.popup-badge { display:inline-block; padding:2px 8px; border-radius:999px; font-size:.68rem; font-weight:700; margin-bottom:6px; }
+
+.legend {
+  background:#1e293b; border:1px solid #334155; border-radius:8px;
+  padding:10px 14px; font-size:.72rem; color:#e2e8f0;
+}
+.legend h4 { font-size:.75rem; margin-bottom:7px; color:#f1f5f9; border-bottom:1px solid #334155; padding-bottom:5px; }
+.legend-row { display:flex; align-items:center; gap:7px; margin-bottom:5px; }
+.legend-dot { width:12px; height:12px; border-radius:50%; flex-shrink:0; border:2px solid rgba(255,255,255,.25); }
+.legend-line { width:18px; height:3px; flex-shrink:0; border-radius:2px; }
+</style>
+</head>
+<body>
+
+<div id="header">
+  <div>
+    <h1>🗺️ Red de Distribución — Culiacán, Sinaloa</h1>
+    <p>Asignación equilibrada · Matrices Haversine regeneradas · 100 nodos</p>
+  </div>
+  <div id="stats">
+    <div class="stat"><div class="v" style="color:#a78bfa">10</div><div class="l">CDs</div></div>
+    <div class="stat"><div class="v" style="color:#38bdf8">90</div><div class="l">Tiendas</div></div>
+    <div class="stat"><div class="v" style="color:#4ade80">8–10</div><div class="l">por CD</div></div>
+  </div>
+</div>
+
+<div id="main">
+  <div id="map"></div>
+  <div id="sidebar">
+    <h2>Zonas de distribución</h2>
+    <div id="cd-list"></div>
+  </div>
+</div>
+
+<script>
+// ── DATA ─────────────────────────────────────────────────────────────────────
+const CDS = [{"id":0,"nombre":"Centro de Distribución 1","lat":24.774908,"lon":-107.309857,"tiendas":[43,46,53,63,69,73,81,99],"count":8},{"id":1,"nombre":"Centro de Distribución 2","lat":24.846399,"lon":-107.380268,"tiendas":[17,25,26,40,44,56,59,91,93,96],"count":10},{"id":2,"nombre":"Centro de Distribución 3","lat":24.731204,"lon":-107.468801,"tiendas":[19,28,42,47,49,54,72,74,88],"count":9},{"id":3,"nombre":"Centro de Distribución 4","lat":24.711617,"lon":-107.326765,"tiendas":[21,33,36,45,50,82,84,95],"count":8},{"id":4,"nombre":"Centro de Distribución 5","lat":24.820223,"lon":-107.358385,"tiendas":[12,27,37,57,60,68,78,98],"count":8},{"id":5,"nombre":"Centro de Distribución 6","lat":24.704117,"lon":-107.306018,"tiendas":[16,22,31,34,79,87,92,97],"count":8},{"id":6,"nombre":"Centro de Distribución 7","lat":24.866489,"lon":-107.457532,"tiendas":[35,38,52,58,67,70,75,77,85,89],"count":10},{"id":7,"nombre":"Centro de Distribución 8","lat":24.736365,"lon":-107.463319,"tiendas":[18,29,39,41,55,61,66,83,90],"count":9},{"id":8,"nombre":"Centro de Distribución 9","lat":24.760848,"lon":-107.395049,"tiendas":[11,13,20,23,32,51,62,64,76,80],"count":10},{"id":9,"nombre":"Centro de Distribución 10","lat":24.786389,"lon":-107.441754,"tiendas":[10,14,15,24,30,48,65,71,86,94],"count":10}];
+
+const TIENDAS = [{"id":10,"nombre":"Tienda 1","lat":24.822371,"lon":-107.472101,"cd":9},{"id":11,"nombre":"Tienda 2","lat":24.758429,"lon":-107.426728,"cd":8},{"id":12,"nombre":"Tienda 3","lat":24.791214,"lon":-107.342965,"cd":4},{"id":13,"nombre":"Tienda 4","lat":24.739935,"lon":-107.397153,"cd":8},{"id":14,"nombre":"Tienda 5","lat":24.818483,"lon":-107.49071,"cd":9},{"id":15,"nombre":"Tienda 6","lat":24.821509,"lon":-107.465895,"cd":9},{"id":16,"nombre":"Tienda 7","lat":24.71301,"lon":-107.310223,"cd":5},{"id":17,"nombre":"Tienda 8","lat":24.893126,"lon":-107.338321,"cd":1},{"id":18,"nombre":"Tienda 9","lat":24.760923,"lon":-107.480466,"cd":7},{"id":19,"nombre":"Tienda 10","lat":24.836847,"lon":-107.41197,"cd":2},{"id":20,"nombre":"Tienda 11","lat":24.724408,"lon":-107.400965,"cd":8},{"id":21,"nombre":"Tienda 12","lat":24.706878,"lon":-107.318136,"cd":3},{"id":22,"nombre":"Tienda 13","lat":24.751756,"lon":-107.367496,"cd":5},{"id":23,"nombre":"Tienda 14","lat":24.762342,"lon":-107.395986,"cd":8},{"id":24,"nombre":"Tienda 15","lat":24.809342,"lon":-107.463029,"cd":9},{"id":25,"nombre":"Tienda 16","lat":24.893917,"lon":-107.344973,"cd":1},{"id":26,"nombre":"Tienda 17","lat":24.8879,"lon":-107.321035,"cd":1},{"id":27,"nombre":"Tienda 18","lat":24.81958,"lon":-107.315625,"cd":4},{"id":28,"nombre":"Tienda 19","lat":24.717699,"lon":-107.460803,"cd":2},{"id":29,"nombre":"Tienda 20","lat":24.709045,"lon":-107.434934,"cd":7},{"id":30,"nombre":"Tienda 21","lat":24.777735,"lon":-107.44573,"cd":9},{"id":31,"nombre":"Tienda 22","lat":24.865748,"lon":-107.428649,"cd":5},{"id":32,"nombre":"Tienda 23","lat":24.756187,"lon":-107.391461,"cd":8},{"id":33,"nombre":"Tienda 24","lat":24.728185,"lon":-107.339561,"cd":3},{"id":34,"nombre":"Tienda 25","lat":24.71491,"lon":-107.302623,"cd":5},{"id":35,"nombre":"Tienda 26","lat":24.854449,"lon":-107.460257,"cd":6},{"id":36,"nombre":"Tienda 27","lat":24.701104,"lon":-107.336908,"cd":3},{"id":37,"nombre":"Tienda 28","lat":24.841371,"lon":-107.354199,"cd":4},{"id":38,"nombre":"Tienda 29","lat":24.854254,"lon":-107.485191,"cd":6},{"id":39,"nombre":"Tienda 30","lat":24.771693,"lon":-107.476826,"cd":7},{"id":40,"nombre":"Tienda 31","lat":24.872621,"lon":-107.37534,"cd":1},{"id":41,"nombre":"Tienda 32","lat":24.76618,"lon":-107.487288,"cd":7},{"id":42,"nombre":"Tienda 33","lat":24.762196,"lon":-107.434963,"cd":2},{"id":43,"nombre":"Tienda 34","lat":24.845921,"lon":-107.372489,"cd":0},{"id":44,"nombre":"Tienda 35","lat":24.877443,"lon":-107.405557,"cd":1},{"id":45,"nombre":"Tienda 36","lat":24.723919,"lon":-107.357351,"cd":3},{"id":46,"nombre":"Tienda 37","lat":24.852157,"lon":-107.387745,"cd":0},{"id":47,"nombre":"Tienda 38","lat":24.854193,"lon":-107.401241,"cd":2},{"id":48,"nombre":"Tienda 39","lat":24.804547,"lon":-107.414492,"cd":9},{"id":49,"nombre":"Tienda 40","lat":24.705084,"lon":-107.478422,"cd":2},{"id":50,"nombre":"Tienda 41","lat":24.706286,"lon":-107.372718,"cd":3},{"id":51,"nombre":"Tienda 42","lat":24.762871,"lon":-107.398286,"cd":8},{"id":52,"nombre":"Tienda 43","lat":24.881513,"lon":-107.450142,"cd":6},{"id":53,"nombre":"Tienda 44","lat":24.782077,"lon":-107.34889,"cd":0},{"id":54,"nombre":"Tienda 45","lat":24.74576,"lon":-107.484604,"cd":2},{"id":55,"nombre":"Tienda 46","lat":24.75795,"lon":-107.467756,"cd":7},{"id":56,"nombre":"Tienda 47","lat":24.88594,"lon":-107.338376,"cd":1},{"id":57,"nombre":"Tienda 48","lat":24.826681,"lon":-107.325708,"cd":4},{"id":58,"nombre":"Tienda 49","lat":24.860734,"lon":-107.462686,"cd":6},{"id":59,"nombre":"Tienda 50","lat":24.878512,"lon":-107.392132,"cd":1},{"id":60,"nombre":"Tienda 51","lat":24.861488,"lon":-107.320782,"cd":4},{"id":61,"nombre":"Tienda 52","lat":24.763601,"lon":-107.47799,"cd":7},{"id":62,"nombre":"Tienda 53","lat":24.745587,"lon":-107.414578,"cd":8},{"id":63,"nombre":"Tienda 54","lat":24.863603,"lon":-107.327854,"cd":0},{"id":64,"nombre":"Tienda 55","lat":24.70139,"lon":-107.397851,"cd":8},{"id":65,"nombre":"Tienda 56","lat":24.783482,"lon":-107.455578,"cd":9},{"id":66,"nombre":"Tienda 57","lat":24.723973,"lon":-107.432477,"cd":7},{"id":67,"nombre":"Tienda 58","lat":24.888582,"lon":-107.435359,"cd":6},{"id":68,"nombre":"Tienda 59","lat":24.803758,"lon":-107.359396,"cd":4},{"id":69,"nombre":"Tienda 60","lat":24.772726,"lon":-107.305644,"cd":0},{"id":70,"nombre":"Tienda 61","lat":24.892489,"lon":-107.449644,"cd":6},{"id":71,"nombre":"Tienda 62","lat":24.79945,"lon":-107.439824,"cd":9},{"id":72,"nombre":"Tienda 63","lat":24.756968,"lon":-107.492623,"cd":2},{"id":73,"nombre":"Tienda 64","lat":24.821913,"lon":-107.399464,"cd":0},{"id":74,"nombre":"Tienda 65","lat":24.710296,"lon":-107.444271,"cd":2},{"id":75,"nombre":"Tienda 66","lat":24.881653,"lon":-107.452088,"cd":6},{"id":76,"nombre":"Tienda 67","lat":24.728979,"lon":-107.402109,"cd":8},{"id":77,"nombre":"Tienda 68","lat":24.89713,"lon":-107.451589,"cd":6},{"id":78,"nombre":"Tienda 69","lat":24.834427,"lon":-107.347676,"cd":4},{"id":79,"nombre":"Tienda 70","lat":24.747528,"lon":-107.354357,"cd":5},{"id":80,"nombre":"Tienda 71","lat":24.773557,"lon":-107.373539,"cd":8},{"id":81,"nombre":"Tienda 72","lat":24.826706,"lon":-107.392845,"cd":0},{"id":82,"nombre":"Tienda 73","lat":24.718058,"lon":-107.33294,"cd":3},{"id":83,"nombre":"Tienda 74","lat":24.764156,"lon":-107.462696,"cd":7},{"id":84,"nombre":"Tienda 75","lat":24.708155,"lon":-107.381821,"cd":3},{"id":85,"nombre":"Tienda 76","lat":24.835513,"lon":-107.496682,"cd":6},{"id":86,"nombre":"Tienda 77","lat":24.802419,"lon":-107.454701,"cd":9},{"id":87,"nombre":"Tienda 78","lat":24.829035,"lon":-107.465127,"cd":5},{"id":88,"nombre":"Tienda 79","lat":24.838188,"lon":-107.422653,"cd":2},{"id":89,"nombre":"Tienda 80","lat":24.887346,"lon":-107.472496,"cd":6},{"id":90,"nombre":"Tienda 81","lat":24.768213,"lon":-107.477305,"cd":7},{"id":91,"nombre":"Tienda 82","lat":24.884939,"lon":-107.324532,"cd":1},{"id":92,"nombre":"Tienda 83","lat":24.751588,"lon":-107.368003,"cd":5},{"id":93,"nombre":"Tienda 84","lat":24.863444,"lon":-107.38896,"cd":1},{"id":94,"nombre":"Tienda 85","lat":24.80593,"lon":-107.45163,"cd":9},{"id":95,"nombre":"Tienda 86","lat":24.718621,"lon":-107.320557,"cd":3},{"id":96,"nombre":"Tienda 87","lat":24.880084,"lon":-107.37338,"cd":1},{"id":97,"nombre":"Tienda 88","lat":24.767806,"lon":-107.430158,"cd":5},{"id":98,"nombre":"Tienda 89","lat":24.845191,"lon":-107.320578,"cd":4},{"id":99,"nombre":"Tienda 90","lat":24.877417,"lon":-107.344025,"cd":0}];
+
+// 10 distinct colors per CD
+const COLORS = [
+  "#ef4444","#3b82f6","#22c55e","#f59e0b","#a855f7",
+  "#06b6d4","#f97316","#ec4899","#84cc16","#ffffff"
+];
+const COLORS_BG = [
+  "#ef444420","#3b82f620","#22c55e20","#f59e0b20","#a855f720",
+  "#06b6d420","#f9731620","#ec489920","#84cc1620","#ffffff15"
+];
+
+// ── MAP ───────────────────────────────────────────────────────────────────────
+const map = L.map('map',{zoomControl:true}).setView([24.795,-107.395],13);
+L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{
+  attribution:'© OpenStreetMap © CARTO', subdomains:'abcd', maxZoom:19
+}).addTo(map);
+
+// Store all layers for show/hide per CD
+const cdLayers   = {};  // cd_id -> layerGroup (lines + store markers)
+const cdMarkers  = {};  // cd_id -> cd marker
+const lineGroups = {};  // cd_id -> lines group
+
+// Build tienda lookup by id
+const tiendaById = {};
+TIENDAS.forEach(t => tiendaById[t.id] = t);
+
+function makeCDIcon(cdIdx) {
+  const color = COLORS[cdIdx];
+  const num   = cdIdx + 1;
+  const sz    = 30;
+  const svg   = `<svg xmlns="http://www.w3.org/2000/svg" width="${sz}" height="${sz+8}" viewBox="0 0 30 38">
+    <polygon points="15,36 4,18 26,18" fill="${color}" stroke="white" stroke-width="1.5" opacity="0.9"/>
+    <circle cx="15" cy="13" r="12" fill="${color}" stroke="white" stroke-width="2"/>
+    <text x="15" y="18" text-anchor="middle" fill="white" font-size="9" font-weight="bold" font-family="Arial">${num}</text>
+  </svg>`;
+  return L.divIcon({html:svg,className:'',iconSize:[sz,sz+8],iconAnchor:[sz/2,sz+8],popupAnchor:[0,-(sz+4)]});
+}
+
+function makeStoreIcon(cdIdx, size=14) {
+  const color = COLORS[cdIdx];
+  const svg   = `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 14 14">
+    <circle cx="7" cy="7" r="6" fill="${color}" stroke="white" stroke-width="1.5" opacity="0.85"/>
+  </svg>`;
+  return L.divIcon({html:svg,className:'',iconSize:[size,size],iconAnchor:[size/2,size/2],popupAnchor:[0,-size/2]});
+}
+
+// Render everything
+CDS.forEach(cd => {
+  const color  = COLORS[cd.id];
+  const group  = L.layerGroup();
+  const lines  = L.layerGroup();
+
+  // Lines: CD → each store
+  cd.tiendas.forEach(tid => {
+    const t = tiendaById[tid];
+    if (!t) return;
+    L.polyline([[cd.lat, cd.lon],[t.lat, t.lon]],{
+      color: color, weight:1.5, opacity:0.45, dashArray:'4 4'
+    }).addTo(lines);
+  });
+
+  // Store markers
+  cd.tiendas.forEach(tid => {
+    const t = tiendaById[tid];
+    if (!t) return;
+    const m = L.marker([t.lat, t.lon],{icon: makeStoreIcon(cd.id)});
+    m.bindPopup(`
+      <div class="popup-title">🏪 ${t.nombre}</div>
+      <span class="popup-badge" style="background:${color}30;color:${color};border:1px solid ${color}60">Zona CD${cd.id+1}</span>
+      <div class="popup-row"><span>Nodo</span><span>${t.id+1}</span></div>
+      <div class="popup-row"><span>CD asignado</span><span>${cd.nombre}</span></div>
+      <div class="popup-row"><span>Coordenadas</span><span>${t.lat.toFixed(5)}, ${t.lon.toFixed(5)}</span></div>
+    `);
+    group.addLayer(m);
+  });
+
+  lines.addTo(map);
+  group.addTo(map);
+  cdLayers[cd.id]  = group;
+  lineGroups[cd.id] = lines;
+
+  // CD marker
+  const cdMarker = L.marker([cd.lat, cd.lon],{icon:makeCDIcon(cd.id), zIndexOffset:1000});
+  cdMarker.bindPopup(`
+    <div class="popup-title">📦 ${cd.nombre}</div>
+    <span class="popup-badge" style="background:${color}30;color:${color};border:1px solid ${color}60">Centro de Distribución</span>
+    <div class="popup-row"><span>Tiendas asignadas</span><span>${cd.count}</span></div>
+    <div class="popup-row"><span>Nodo</span><span>${cd.id+1}</span></div>
+    <div class="popup-row"><span>Coordenadas</span><span>${cd.lat.toFixed(5)}, ${cd.lon.toFixed(5)}</span></div>
+  `);
+  cdMarker.addTo(map);
+  cdMarkers[cd.id] = cdMarker;
+});
+
+// ── LEGEND ────────────────────────────────────────────────────────────────────
+const legend = L.control({position:'bottomleft'});
+legend.onAdd = () => {
+  const div = L.DomUtil.create('div','legend');
+  let html = '<h4>Zonas por CD</h4>';
+  CDS.forEach(cd => {
+    html += `<div class="legend-row">
+      <div class="legend-line" style="background:${COLORS[cd.id]}"></div>
+      <span>CD${cd.id+1} — ${cd.count} tiendas</span>
+    </div>`;
+  });
+  html += `<div style="margin-top:8px;padding-top:6px;border-top:1px solid #334155;font-size:.65rem;color:#475569">
+    ● Tienda &nbsp; ▲ Centro Distribución
+  </div>`;
+  div.innerHTML = html;
+  return div;
+};
+legend.addTo(map);
+
+// ── SIDEBAR ───────────────────────────────────────────────────────────────────
+const cdListEl = document.getElementById('cd-list');
+let activeCard = null;
+
+CDS.forEach(cd => {
+  const color = COLORS[cd.id];
+  const card  = document.createElement('div');
+  card.className = 'cd-card';
+  card.style.background = COLORS_BG[cd.id];
+
+  const tiendaNames = cd.tiendas.map(tid => {
+    const t = tiendaById[tid];
+    return t ? `<span class="store-chip" style="border-color:${color}40">${t.nombre}</span>` : '';
+  }).join('');
+
+  card.innerHTML = `
+    <div class="cd-header" style="background:${color}18">
+      <span style="color:${color}">▲ CD${cd.id+1} — ${cd.nombre.replace('Centro de Distribución ','')}</span>
+      <span class="cd-badge" style="background:${color}25;color:${color};border:1px solid ${color}50">${cd.count} tiendas</span>
+    </div>
+    <div class="cd-stores" id="stores-${cd.id}">${tiendaNames}</div>
+  `;
+
+  card.addEventListener('click', () => {
+    const storesDiv = document.getElementById(`stores-${cd.id}`);
+    const isOpen    = storesDiv.classList.contains('open');
+
+    // Close all
+    document.querySelectorAll('.cd-stores').forEach(d => d.classList.remove('open'));
+    document.querySelectorAll('.cd-card').forEach(c => c.classList.remove('active'));
+
+    if (!isOpen) {
+      storesDiv.classList.add('open');
+      card.classList.add('active');
+      // Fly to CD
+      map.flyTo([cd.lat, cd.lon], 14, {duration:0.8});
+      cdMarkers[cd.id].openPopup();
+    }
+  });
+
+  cdListEl.appendChild(card);
+});
+</script>
+</body>
+</html>
